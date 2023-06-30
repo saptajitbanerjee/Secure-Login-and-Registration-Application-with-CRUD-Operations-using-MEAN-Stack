@@ -1,0 +1,22 @@
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate class="form-group">
+    <label for="username">Username</label><br>
+    <input type="text" id="username" name="username" [(ngModel)]="form.username" #username="ngModel" pattern="^[A-Za-z][A-Za-z0-9_]{4,12}$" required/><br>
+    <span class="alert" *ngIf="username.errors?.['pattern']">Username is invalid<br></span>
+    <span class="alert" *ngIf="username.errors?.['required'] && username.dirty">Username is Required<br></span>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,}$" required/><br>
+    <span class="alert" *ngIf="password.errors?.['pattern']">Password is invalid<br></span>
+    <span class="alert" *ngIf="password.errors?.['required'] && password.dirty">Password is Required<br></span>
+    <label for="repeat-password">Repeat Password</label><br>
+    <input type="password" id="repeat_password" name="repeat-password" [(ngModel)]="form.repeat_password" #repeat_password="ngModel" required/>
+    <span class="alert" *ngIf="form.password!==form.repeat_password">Password is different<br></span>
+    <span class="alert" *ngIf="repeat_password.errors?.['required'] && repeat_password.dirty">Repeat Password is required<br></span>
+    <label for="mobile_no">Mobile Number</label><br>
+    <input type="text" id="mobile_no" name="mobile_no" [(ngModel)]="form.mobile_no" /><br>
+    <label for="email_addr">Email Address</label><br>
+    <input type="email" id="email_addr" name="email_addr" [(ngModel)]="form.email_addr" /><br>
+    <br>
+    <div style="text-align: center;">
+        <button mat-raised-button type="submit">Register <i class="fa fa-user-plus" aria-hidden="true"></i></button>
+    </div>
+</form>

@@ -1,0 +1,102 @@
+<h1 style="text-align:center">Welcome {{name}}!</h1>
+<div class="body">
+    <div>
+        <h2 style="text-align:center">Form</h2>
+        <form id="create" name="form" #f="ngForm" (ngSubmit)="f.form.valid && save()" novalidate class="form-group">
+            <label for="username">Username</label><br>
+            <input type="text" [(ngModel)]="form.username" #username="ngModel" name="username" placeholder="Username" /><br>
+            <label for="password">Password</label><br>
+            <input type="text" [(ngModel)]="form.password" #password="ngModel" name="password" placeholder="Password" /><br>
+            <label for="mobile_no">Mobile Number</label><br>
+            <input type="text" [(ngModel)]="form.mobile_no" #mobile_no="ngModel" name="mobile_no" placeholder="Mobile No." /><br>
+            <label for="email_addr">Email Address</label><br>
+            <input type="text" [(ngModel)]="form.email_addr" #email_addr="ngModel" name="email_addr" placeholder="Email Address" /><br>
+            <div id="btn">
+                <button mat-raised-button class="add" type="submit">Add <i class="fa fa-user-plus" aria-hidden="true"></i></button><br>
+                <button mat-raised-button class="logout" (click)="logout()">Logout <mat-icon>logout</mat-icon></button>
+            </div>
+        </form>
+    </div>
+    <div id="data" style="text-align:center">
+        <h2>User Table</h2>
+        <!--table class="table" id="table">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userItem of userArray">
+                <td>{{userItem.username | titlecase}}</td>
+                <td>{{userItem.password }}</td>
+                <td>{{userItem.mobile_no }}</td>
+                <td>{{userItem.email_addr }}</td>
+                <td>
+                    <button type="button" class="edit" (click)="setUpdate(userItem)">Edit</button>
+                    <button type="button" class="remove" (click)="setDelete(userItem)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table-->
+        <!--/div-->
+
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- Username Column>
+    <ng-container [matColumnDef]="column.name" *ngFor="let column of initColumns">
+        <th mat-header-cell *matHeaderCellDef> {{column.display}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column.name]}}</td>
+        <td mat-cell>
+            <button type="button" class="edit" (click)="setUpdate(userArray[column.name])">Edit</button>
+            <button type="button" class="remove" (click)="setDelete(userArray[column.name])">Delete</button>
+        </td>
+    </ng-container-->
+            <!--Username Column-->
+            <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef> Username </th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+            <!-- Password Column-->
+            <ng-container matColumnDef="password">
+                <th mat-header-cell *matHeaderCellDef> Password </th>
+                <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+            </ng-container>
+            <!--Mobile Number Column-->
+            <ng-container matColumnDef="mobile_no">
+                <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+                <td mat-cell *matCellDef="let element"> {{element.mobile_no}} </td>
+            </ng-container>
+
+            <!--Email Address Column-->
+            <ng-container matColumnDef="email_addr">
+                <th mat-header-cell *matHeaderCellDef> Email Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.email_addr}} </td>
+            </ng-container>
+
+            <!--Options Column-->
+            <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef> Options </th>
+                <td mat-cell *matCellDef="let element" style="text-align: center;width:240px">
+                    <div class="options">
+                        <button mat-raised-button type="button" class="edit" (click)="setUpdate(element)">Edit <mat-icon>edit</mat-icon></button>
+                        <button mat-raised-button type="button" class="remove" (click)="setDelete(element)">Delete <mat-icon>delete</mat-icon></button>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <div style="display:flex;justify-content:center">
+            <mat-paginator [showFirstLastButtons]="true" [pageSizeOptions]="[5,10,20]" aria-label="Select Page"></mat-paginator>
+        </div>
+    </div>
+</div>
+<footer>
+    <button mat-raised-button class="file" (click)="fileDownloadCSV()">Download CSV File <i class="fa-solid fa-file-csv"></i></button>
+    <button mat-raised-button class="file" (click)="fileDownloadPDF()">Download PDF File <i class="fa-solid fa-file-pdf"></i></button>
+</footer>

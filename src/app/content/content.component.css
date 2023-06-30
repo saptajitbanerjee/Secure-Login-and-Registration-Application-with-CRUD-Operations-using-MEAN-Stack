@@ -1,0 +1,137 @@
+form {
+    border: 5px black solid;
+    width: 240px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    margin: auto 10px;
+}
+
+input[type=text] {
+    /*border-radius: 10px;*/
+    border: none;
+    outline: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    width: 220px;
+    font-size: 15px;
+}
+
+#btn {
+    text-align: center
+}
+
+.add {
+    border-radius: 10px !important;
+    border: 2px black solid !important;
+    background-color: green !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    margin-top: 20px !important;
+    padding: 5px !important;
+    width: 120px !important
+}
+
+.add:hover {
+    background-color: lightgreen !important;
+}
+
+.file {
+    border-radius: 10px !important;
+    border: 2px black solid !important;
+    background-color: green !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    margin-top: 20px !important;
+    padding: 5px !important;
+}
+
+.file:hover {
+    background-color: lightgreen !important;
+}
+
+table {
+    border: 3px solid black;
+    border-spacing: 0px;
+    border-collapse: seperate !important;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 500px;
+    width: 1000px;
+}
+
+th {
+    font-size: 20px;
+}
+
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+}
+
+table .edit,
+.remove {
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+}
+
+table .edit {
+    background-color: green !important;
+}
+
+table .edit:hover {
+    background-color: lightgreen !important;
+}
+
+table .remove {
+    background-color: red !important;
+    color: black !important;
+}
+
+table .remove:hover {
+    background-color: #FFD6D5 !important;
+}
+
+.logout {
+    border-radius: 10px !important;
+    border: 2px black solid !important;
+    background-color: red !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    margin-top: 20px !important;
+    padding: 5px !important;
+    width: 120px !important
+}
+
+.logout:hover {
+    background-color: #FFD6D5 !important;
+}
+
+.body {
+    display: flex;
+    padding: 10px
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+footer button {
+    margin: 10px;
+}
+
+.options {
+    display: flex;
+}

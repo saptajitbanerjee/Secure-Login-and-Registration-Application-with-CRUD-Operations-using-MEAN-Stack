@@ -1,0 +1,105 @@
+form {
+    background-color: blue;
+    color: white;
+    border: 5px gold solid;
+    width: 240px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+input[type=text]:focus {
+    border-bottom: white 3px solid;
+    background-color: blue;
+}
+
+input::placeholder {
+    color: gold;
+}
+
+input[type=text]:focus::placeholder {
+    color: white;
+}
+
+input[type=password]:focus::placeholder {
+    color: white;
+}
+
+input[type=password]:focus {
+    border-bottom: white 3px solid;
+    background-color: blue;
+    color: white;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input[type=text] {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    border-bottom: gold 3px solid;
+    color: white;
+    width: 230px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input[type=password] {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    border-bottom: gold 3px solid;
+    color: white;
+    width: 230px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 10px !important;
+    border: 2px white solid !important;
+    background-color: gold !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    padding: 5px !important;
+    margin-top: 10px !important;
+}
+
+button:focus {
+    /*transform: translateY(5px);
+    transform: translateY(-5px);*/
+    transform: translateY(12px) !important;
+    color: green !important;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: lightgreen !important;
+    cursor: pointer !important;
+}
+
+.alert {
+    color: gold;
+    font-size: 10px;
+}
+
+.label {
+    width: 100% !important;
+    height: 80px !important;
+    /*height: 40px !important;*/
+    color: white !important;
+    background-color: transparent !important;
+}
+
+
+/*.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: white !important;
+    border-color: white !important;
+    outline-color: white !important;
+}*/

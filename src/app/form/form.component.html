@@ -1,0 +1,14 @@
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate class="form-group">
+    <label for="username" color="primary">Username</label>
+    <input type="text" [(ngModel)]="form.username" required placeholder="Your Username" #username="ngModel" name="username" pattern="^[A-Za-z][A-Za-z0-9_]{4,12}$" placeholder="Username" /><br>
+    <span class="alert" *ngIf="username.errors?.['pattern']">Username is invalid<br></span>
+    <span class="alert" *ngIf="username.errors?.['required'] && username.dirty">Username is Required<br></span>
+    <label for="password">Password</label><br>
+    <input type="password" [(ngModel)]="form.password" #password="ngModel" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{5,}$" placeholder="Your Password" />
+    <span class="alert" *ngIf="password.errors?.['pattern']">Password is invalid. One letter, One Special Charcater, One number<br></span>
+    <span class="alert" *ngIf="password.errors?.['required'] && password.dirty">Username is Required<br></span>
+    <br>
+    <div style="text-align:center">
+        <button mat-raised-button type="submit">Log In <mat-icon>login</mat-icon></button>
+    </div>
+</form>

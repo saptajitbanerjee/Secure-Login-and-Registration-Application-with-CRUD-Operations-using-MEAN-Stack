@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    color: white;
+    background-color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding: 10px
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin: 15px
+}
+
+a:hover {
+    color: gold
+}

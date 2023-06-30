@@ -1,0 +1,16 @@
+<body>
+    <nav>
+        <span>Reliance</span>
+        <span class="nav">
+        <a routerLink="login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+        <a routerLink="register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a>
+        <a routerLink="content" routerLinkActive="active" ariaCurrentWhenActive="page">Content</a>
+        <!--[routerLink]="'content' ? 'login' : null"-->
+        <!--a routerLink="content" routerLinkActive="active">Content</a-->
+        </span>
+    </nav>
+    <h1>Reliance</h1>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</body>
